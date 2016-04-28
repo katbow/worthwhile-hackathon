@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 
-export class ToggleViewEvents extends Component {
+export default class ToggleViewEvents extends Component {
   handleSelect (e, key) {
     e.preventDefault()
     console.log('selected the event with key', key)
   }
-  render() {
+  render () {
     return (
       <Nav bsStyle='tabs' activeKey={1} onSelect={this.handleSelect}>
         <NavItem eventKey={1}>List</NavItem>
