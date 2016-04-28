@@ -1,11 +1,23 @@
-// jQuery(function ($) {
-//   // Asynchronously Load the map API
-//   var script = document.createElement('script')
-//   script.src = 'http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize'
-//   document.body.appendChild(script)
-// })
+import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
 
-function initialize () {
+export default class Map extends Component {
+  componentWillMount () {
+    initialize()
+  }
+  render () {
+    return (
+      <div id='map_canvas' style={mapStyle}></div>
+    )
+  }
+}
+
+const mapStyle = {
+  height: '100%',
+  width: '100%'
+}
+
+const initialize = () => {
   var map
   var bounds = new google.maps.LatLngBounds()
   var mapOptions = {
