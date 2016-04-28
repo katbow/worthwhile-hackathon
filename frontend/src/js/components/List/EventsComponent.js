@@ -3,13 +3,12 @@ import { Nav, NavItem } from 'react-bootstrap'
 
 export default class ToggleViewEvents extends Component {
   render () {
-    console.log(this.props)
     return (
       <div>
         <Nav 
           bsStyle='tabs' 
           activeKey={this.props.eventsView}
-          onSelect={this.props.toggleviewevents.bind(eventKey)}>
+          onSelect={this.props.toggleviewevents}>
           <NavItem eventKey={'list'}>List</NavItem>
           <NavItem eventKey={'map'}>Map</NavItem>
         </Nav>
