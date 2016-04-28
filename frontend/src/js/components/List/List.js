@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 
 export default class ToggleViewEvents extends Component {
-  handleSelect (e, key) {
-    e.preventDefault()
+  handleSelect (key) {
+    event.preventDefault()
     console.log('selected the event with key', key)
   }
   render () {
