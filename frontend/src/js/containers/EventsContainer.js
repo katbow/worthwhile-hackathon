@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Nav, NavItem } from 'react-bootstrap'
-import EventsComponent from '../components/List/EventsComponent.js'
+import EventsComponent from '../components/Events/EventsComponent.js'
 import { connect } from 'react-redux'
 import { toggleviewevents } from '../actions/index.js'
 
