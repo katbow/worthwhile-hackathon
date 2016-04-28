@@ -1,11 +1,24 @@
-// jQuery(function ($) {
-//   // Asynchronously Load the map API
-//   var script = document.createElement('script')
-//   script.src = 'http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize'
-//   document.body.appendChild(script)
-// })
+import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
 
-function initialize () {
+export default class Map extends Component {
+  componentDidMount () {
+    initialize()
+  }
+  render () {
+    return (
+      <div id='map_canvas' style={mapStyle}></div>
+    )
+  }
+}
+
+const mapStyle = {
+  margin: '0 auto',
+  height: '350px',
+  width: '1200px',
+}
+
+const initialize = () => {
   var map
   var bounds = new google.maps.LatLngBounds()
   var mapOptions = {
@@ -36,28 +49,28 @@ function initialize () {
     '<p>Worthwhile Hackathon</p>' + '</div>'],
     ['<div class="info_content">' +
     '<h3>WCL (3 Events)</h3>' +
-    '<a href="https://www.studentvolunteeringweek.org/whats-on/ealing-hammersmith-and-west-london-college-">Events at WCL</a>' + '</div>'],
+    '<a target="_blank" href="https://www.studentvolunteeringweek.org/whats-on/ealing-hammersmith-and-west-london-college-">Events at WCL</a>' + '</div>'],
     ['<div class="info_content">' +
     '<h3>Imperial College London (7 Events)</h3>' +
-    '<a href="https://www.studentvolunteeringweek.org/whats-on/imperial-college-london">Events at Imperial College London</a>' + '</div>'],
+    '<a target="_blank" href="https://www.studentvolunteeringweek.org/whats-on/imperial-college-london">Events at Imperial College London</a>' + '</div>'],
     ['<div class="info_content">' +
     '<h3>Kingston University (10 Events)</h3>' +
-    '<a href="https://www.studentvolunteeringweek.org/whats-on/kingston-university">Events at Kingston University</a>' + '</div>'],
+    '<a target="_blank" href="https://www.studentvolunteeringweek.org/whats-on/kingston-university">Events at Kingston University</a>' + '</div>'],
     ['<div class="info_content">' +
     '<h3>London School of Economics (4 Events)</h3>' +
-    '<a href="https://www.studentvolunteeringweek.org/whats-on/london-school-of-economics">Events at London School of Economics</a>' + '</div>'],
+    '<a target="_blank" href="https://www.studentvolunteeringweek.org/whats-on/london-school-of-economics">Events at London School of Economics</a>' + '</div>'],
     ['<div class="info_content">' +
     '<h3>University College London (5 Events)</h3>' +
-    '<a href="https://www.studentvolunteeringweek.org/whats-on/university-college-london-union">Events at University College London Union</a>' + '</div>'],
+    '<a target="_blank" href="https://www.studentvolunteeringweek.org/whats-on/university-college-london-union">Events at University College London Union</a>' + '</div>'],
     ['<div class="info_content">' +
     '<h3>University of East London (1 Event)</h3>' +
-    '<a href="https://www.studentvolunteeringweek.org/whats-on/university-of-east-london">Events at University of East London</a>' + '</div>'],
+    '<a target="_blank" href="https://www.studentvolunteeringweek.org/whats-on/university-of-east-london">Events at University of East London</a>' + '</div>'],
     ['<div class="info_content">' +
     '<h3>Royal Holloway, University of London (4 Events)</h3>' +
-    '<a href="https://www.studentvolunteeringweek.org/whats-on/royal-holloway-university-of-london">Events at Royal Holloway, University of London</a>' + '</div>'],
+    '<a target="_blank" href="https://www.studentvolunteeringweek.org/whats-on/royal-holloway-university-of-london">Events at Royal Holloway, University of London</a>' + '</div>'],
     ['<div class="info_content">' +
     '<h3>The University of West London (13 Events)</h3>' +
-    '<a href="https://www.studentvolunteeringweek.org/whats-on/the-university-of-west-london-">Events at The University of West London</a>' + '</div>']
+    '<a target="_blank" href="https://www.studentvolunteeringweek.org/whats-on/the-university-of-west-london-">Events at The University of West London</a>' + '</div>']
   ]
 
   // Display multiple markers on a map
