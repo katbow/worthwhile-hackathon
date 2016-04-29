@@ -4,12 +4,12 @@ import { connect } from 'react-redux'
 const styles = {
   li: {
     listStyleType: 'none',
-    color: 'white',
+    color: 'black',
     fontSize: '1.7em',
     textDecoration: 'none',
     padding: '2em',
     margin: '9px',
-    backgroundColor: 'green',
+    border: '3px solid green',
     borderRadius: '10px'
   },
   ul: {
@@ -28,7 +28,7 @@ class List extends Component {
             <li style={styles.li}>
               <h3>{event.title}</h3>
               <p>{event.description}</p>
-              <p><span>Venue: </span>{event.venue}</p>
+              <p><span>Venue: </span>{event.venue},<div style={{width: '20px'}}></div> Postcode: {event.postcode}</p>
               <div>Current Attendees: {event.attendees}</div>
             </li>
           )}
