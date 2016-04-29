@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import {Button} from 'react-bootstrap'
 import { connect } from 'react-redux'
 
-import { toggleModal, changeCurrentEvent, addAttendee } from '../actions/index.js'
+import { toggleModal, changeCurrentEvent, addAttendee, toggleviewevents, centreMapFunc } from '../actions/index.js'
 
 const actionCreators = {
   toggleModal,
   changeCurrentEvent,
-  addAttendee
+  addAttendee,
+  toggleviewevents,
+  centreMapFunc
 }
 
 const styles = {
@@ -52,6 +54,11 @@ class List extends Component {
                   this.props.addAttendee(null, event, index)
                 }}>
                 ATTEND EVENT
+              </Button>
+              <Button onClick={(e) => {
+                  this.props.toggleviewevents('map')
+                  this.props.centreMapFunc(e, event.latLng)
+                }}>GO TO map
               </Button>
             </li>
           )}

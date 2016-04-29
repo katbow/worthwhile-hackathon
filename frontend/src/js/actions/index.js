@@ -14,18 +14,23 @@ export const toggleviewevents = (eventKey) => {
   }
 }
 
-export const centreMapFunc = (e) => {
+export const centreMapFunc = (e, LatLngInput) => {
   e.preventDefault()
+  console.log('LatLngInput is', LatLngInput);
   // const postcode = ReactDOM.findDOMNode(this.refs.inputPostCode).value
-  const postcode = document.getElementById('inputPostCode').value
-  if (postcode.length > 5 && postcode.indexOf(' ') > -1) {
-    return convertAddressToLatLongObj(postcode)
-    .then(latLng => {
-      return {type: CENTRE_MAP, payload: latLng}
-    })
-    .catch(err => {
-      console.log(err)
-    })
+  if (!LatLngInput) {
+    const postcode = document.getElementById('inputPostCode').value
+    if (postcode.length > 5 && postcode.indexOf(' ') > -1) {
+      return convertAddressToLatLongObj(postcode)
+      .then(latLng => {
+        return {type: CENTRE_MAP, payload: latLng}
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+  } else {
+    return {type: CENTRE_MAP, payload: LatLngInput}
   }
 }
 
