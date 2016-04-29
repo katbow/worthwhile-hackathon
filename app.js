@@ -29560,11 +29560,11 @@
 
 	var options = {
 	  headerLogo: {
-	    imgUrl: 'img/SVW-Logo.png',
+	    imgUrl: 'https://i.imgur.com/79yoBkg.png',
 	    websiteUrl: 'http://www.foundersandcoders.com'
 	  },
 	  footerLogo: {
-	    imgUrl: 'img/FAC-logo.png',
+	    imgUrl: 'https://i.imgur.com/Nxnq72F.png',
 	    websiteUrl: 'http://www.foundersandcoders.com'
 	  }
 	};
@@ -29661,7 +29661,8 @@
 	              _this2.setState({ menuOpen: !_this2.state.menuOpen });
 	            },
 	            className: 'top-menu',
-	            fixedTop: true },
+	            fixedTop: true,
+	            style: { backgroundImage: 'url("http://i.imgur.com/CQbE0tE.jpg"' } },
 	          _react2.default.createElement(
 	            _reactBootstrap.Navbar.Header,
 	            null,
@@ -47507,7 +47508,7 @@
 
 
 	// module
-	exports.push([module.id, ".header-spacing {\n  height: 100px; }\n\n.navbar {\n  margin-bottom: 0; }\n\n.navbar-toggle {\n  border: none;\n  transition: 0.3s ease;\n  padding: 10px;\n  margin-top: 15px;\n  margin-right: 15px; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #fff;\n  width: 25px;\n  height: 3px; }\n\n.navbar-default .navbar-toggle:focus {\n  background-color: transparent; }\n\n.navbar-default .navbar-toggle:hover {\n  background-color: rgba(221, 221, 221, 0.26); }\n\n.top-menu {\n  background-color: #199FD4;\n  border: none;\n  border-radius: 0; }\n  .top-menu .navbar-nav > li > a {\n    color: #fff; }\n  .top-menu .navbar-brand {\n    height: 100px;\n    width: 7em; }\n    .top-menu .navbar-brand img {\n      margin-top: 10px;\n      width: 100%; }\n\n@media (min-width: 768px) {\n  .top-menu .navbar-right li {\n    padding: 20px 0; } }\n\n.user-logged-in {\n  position: absolute;\n  margin-top: 15px;\n  color: #3E6AA3; }\n\n.footer {\n  border: none;\n  border-radius: 0;\n  position: absolute;\n  width: 100%;\n  bottom: 0;\n  background-color: #2B2B2B; }\n  .footer .navbar-header,\n  .footer .navbar-right li {\n    display: inline-block;\n    color: #fff; }\n  .footer .navbar-right {\n    display: inline-block;\n    float: right; }\n  .footer p {\n    margin: 2em 1.5em;\n    color: #fff; }\n  .footer .navbar-brand {\n    width: 5.26316em; }\n    .footer .navbar-brand img {\n      width: 100%; }\n\nhtml {\n  position: relative;\n  min-height: 100%; }\n\nbody {\n  font-family: Lato, PT Sans, Helvetica Neue, Helvetica, Arial;\n  margin-bottom: 80px; }\n\n.about h3 {\n  text-align: center;\n  margin: 2em; }\n\n.home {\n  text-align: center; }\n\n.image-container {\n  width: 80%;\n  max-width: 400px;\n  margin: 4em auto; }\n  .image-container img {\n    width: 100%; }\n", ""]);
+	exports.push([module.id, ".header-spacing {\n  height: 100px; }\n\n.navbar {\n  margin-bottom: 0; }\n\n.navbar-toggle {\n  border: none;\n  transition: 0.3s ease;\n  padding: 10px;\n  margin-top: 15px;\n  margin-right: 15px; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #fff;\n  width: 25px;\n  height: 3px; }\n\n.navbar-default .navbar-toggle:focus {\n  background-color: transparent; }\n\n.navbar-default .navbar-toggle:hover {\n  background-color: rgba(221, 221, 221, 0.26); }\n\n.top-menu {\n  border: none;\n  border-radius: 0; }\n  .top-menu .navbar-nav > li > a {\n    color: #fff; }\n  .top-menu .navbar-brand {\n    height: 100px;\n    width: 7em; }\n    .top-menu .navbar-brand img {\n      margin-top: 10px;\n      width: 100%; }\n\n@media (min-width: 768px) {\n  .top-menu .navbar-right li {\n    padding: 20px 0; } }\n\n.user-logged-in {\n  position: absolute;\n  margin-top: 15px;\n  color: #3E6AA3; }\n\n.footer {\n  border: none;\n  border-radius: 0;\n  position: absolute;\n  width: 100%;\n  bottom: 0;\n  background-color: #2B2B2B; }\n  .footer .navbar-header,\n  .footer .navbar-right li {\n    display: inline-block;\n    color: #fff; }\n  .footer .navbar-right {\n    display: inline-block;\n    float: right; }\n  .footer p {\n    margin: 2em 1.5em;\n    color: #fff; }\n  .footer .navbar-brand {\n    width: 5.26316em; }\n    .footer .navbar-brand img {\n      width: 100%; }\n\nhtml {\n  position: relative;\n  min-height: 100%; }\n\nbody {\n  font-family: Lato, PT Sans, Helvetica Neue, Helvetica, Arial;\n  margin-bottom: 80px; }\n\n.about h3 {\n  text-align: center;\n  margin: 2em; }\n\n.home {\n  text-align: center; }\n\n.image-container {\n  width: 80%;\n  max-width: 400px;\n  margin: 4em auto; }\n  .image-container img {\n    width: 100%; }\n", ""]);
 
 	// exports
 
@@ -48099,28 +48100,58 @@
 	                )
 	              ),
 	              _react2.default.createElement(
-	                'div',
-	                { style: { float: 'left', marginRight: '10%' } },
-	                'Venue: ',
-	                event.venue
-	              ),
-	              _react2.default.createElement(
-	                'div',
+	                _reactBootstrap.Row,
 	                null,
-	                'Postcode: ',
-	                event.postcode
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { md: 2 },
+	                  _react2.default.createElement(
+	                    'strong',
+	                    null,
+	                    'Venue'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { md: 10 },
+	                  event.venue
+	                )
 	              ),
 	              _react2.default.createElement(
-	                'div',
-	                { style: { float: 'left', marginRight: '10%' } },
-	                'Attendees: ',
-	                event.attendees
-	              ),
-	              _react2.default.createElement(
-	                'div',
+	                _reactBootstrap.Row,
 	                null,
-	                'Time: ',
-	                event.time
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { md: 2 },
+	                  _react2.default.createElement(
+	                    'strong',
+	                    null,
+	                    'Time'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { md: 5 },
+	                  event.time
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { md: 3 },
+	                  _react2.default.createElement(
+	                    'strong',
+	                    null,
+	                    'Attendees'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { md: 2 },
+	                  _react2.default.createElement(
+	                    'em',
+	                    null,
+	                    event.attendees
+	                  )
+	                )
 	              ),
 	              _react2.default.createElement(
 	                _reactBootstrap.Button,
