@@ -1,5 +1,13 @@
 import React, { Component } from 'react'
+import {Button} from 'react-bootstrap'
 import { connect } from 'react-redux'
+
+import { toggleModal, changeCurrentEvent } from '../actions/index.js'
+
+const actionCreators = {
+  toggleModal,
+  changeCurrentEvent
+}
 
 const styles = {
   li: {
@@ -18,7 +26,7 @@ const styles = {
     marginRight: '20%',
     marginLeft: '20%'
   }
-} 
+}
 
 class List extends Component {
   render() {
@@ -32,18 +40,21 @@ class List extends Component {
               <div>Postcode: {event.postcode}</div>
               <div style={{float: 'left', marginRight: '10%'}}>Attendees: {event.attendees}</div>
               <div>Time: {event.time}</div>
+              <Button
+                onClick={() => {
+                  this.props.changeCurrentEvent(event)
+                  this.props.toggleModal()
+                }}
+              >See More Info
+              </Button>
             </li>
           )}
-        )} 
+        )}
       </ul>
     )
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    eventList: state.eventList
-  }
-}
+const mapStateToProps = state => ({...state})
 
-export default connect(mapStateToProps)(List) 
+export default connect(mapStateToProps, actionCreators)(List)
