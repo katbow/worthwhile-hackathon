@@ -5,6 +5,7 @@ export const TOGGLE_VIEW_EVENTS = 'TOGGLE_VIEW_EVENTS'
 export const CENTRE_MAP = 'CENTRE_MAP'
 export const TOGGLE_MODAL = 'TOGGLE_MODAL'
 export const CHANGE_CURRENT_EVENT = 'CHANGE_CURRENT_EVENT'
+export const ATTEND_EVENT = 'ATTEND_EVENT'
 
 export const toggleviewevents = (eventKey) => {
   return {
@@ -38,5 +39,13 @@ export const changeCurrentEvent = (event) => {
   return {
     type: CHANGE_CURRENT_EVENT,
     payload: event
+  }
+}
+
+export const addAttendee = (e, event, index) => {
+  return {
+    type: ATTEND_EVENT,
+    event: {...event, attendees: event.attendees+1},
+    index
   }
 }

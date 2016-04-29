@@ -2,24 +2,32 @@ import React, {Component} from 'react'
 import { Nav, NavItem } from 'react-bootstrap'
 import List from '../../containers/List.js'
 import Map from '../../containers/Map.js'
-import PostCodeInput from '../../containers/PostCodeInput.js'
 import EventModal from '../../containers/EventModal.js'
 
 export default class ToggleViewEvents extends Component {
   render () {
     return (
-      <div>
+      <div style={viewEventsStyle}>
         <Nav
           bsStyle='tabs'
           activeKey={this.props.eventsView}
           onSelect={this.props.toggleviewevents}>
-          <NavItem eventKey={'list'}>List</NavItem>
+          <NavItem eventKey={'list'} style={navItemStyle}>List</NavItem>
           <NavItem eventKey={'map'}>Map</NavItem>
-          <PostCodeInput />
         </Nav>
+
         {this.props.eventsView === 'list' ? <List /> : <Map />}
         <EventModal />
       </div>
     )
   }
+}
+
+const viewEventsStyle = {
+  width: '100%',
+  margin: '0 auto'
+}
+
+const navItemStyle = {
+  marginLeft: '8vw'
 }
