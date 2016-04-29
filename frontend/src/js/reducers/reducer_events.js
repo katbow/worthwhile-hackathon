@@ -3,11 +3,6 @@ import { ATTEND_EVENT } from '../actions/index.js'
 export default (state = initialState, action) => {
   switch (action.type) {
     case ATTEND_EVENT:
-    console.log('state.slice(0, action.index)', state.slice(0, action.index))
-    console.log('action event', action.event)
-      console.log('new state', state.slice(0, action.index)
-                  .concat(action.event)
-                  .concat(state.slice(action.index+1)))
       return state.slice(0, action.index)
                   .concat(action.event)
                   .concat(state.slice(action.index+1))

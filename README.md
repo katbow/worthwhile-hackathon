@@ -14,3 +14,17 @@ this change is to get more people involved in the various volunteering events.
   * Event Description
   * Event URL
   * Number of Attendees
+
+## Running this App
+
+Run the following commands in your terminal:  
+
+`git clone git@github.com:katbow/worthwhile-hackathon.git`
+
+`cd worthwhile-hackathon`
+
+`npm install`
+
+`npm run watch`
+
+The app can now be accessed by going to http://localhost:8080
