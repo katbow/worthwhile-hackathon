@@ -13,7 +13,7 @@ class PostCodeInput extends Component {
     return (
       <form
         onSubmit={this.props.centreMapFunc}
-        style={{margin: '2vh 0 0 6vh'}}>
+        style={{margin: '2vh 0 0 7.5%'}}>
         <input
           ref='inputPostCode'
           id='inputPostCode'
