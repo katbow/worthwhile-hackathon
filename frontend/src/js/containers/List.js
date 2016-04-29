@@ -49,7 +49,7 @@ class List extends Component {
                     this.props.changeCurrentEvent(event)
                     this.props.toggleModal()
                   }}
-                >See More Info
+                >MORE INFO
                 </Button>
                 <Button onClick={() => {
                     this.props.addAttendee(null, event, index)
