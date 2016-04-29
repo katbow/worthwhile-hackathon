@@ -6,7 +6,6 @@ import { toggleviewevents } from '../actions/index.js'
 
 class ToggleViewEvents extends Component {
   render () {
-    console.log(toggleviewevents)
     return (
       <EventsComponent {...this.props} />
     )
