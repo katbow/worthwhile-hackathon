@@ -20,7 +20,7 @@ export default class Header extends React.Component {
           <Navbar.Header>
             <Navbar.Brand>
               <Link to={'/'}>
-                <img src={this.props.logoUrl}></img>
+                <img style={{marginTop: '-15px'}} src={this.props.logoUrl}></img>
               </Link>
             </Navbar.Brand>
             <Navbar.Toggle />

@@ -6,7 +6,7 @@ import Footer from './Footer/footer_index.js'
 import '../../scss/style.scss'
 
 const options = {
-  logoUrl: 'img/rhino.png'
+  logoUrl: 'img/SVW-Logo.png'
 }
 
 export default class App extends React.Component {
