@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Button} from 'react-bootstrap'
+import {Button, Col, Row} from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 import { toggleModal, changeCurrentEvent, addAttendee, toggleviewevents, centreMapFunc } from '../actions/index.js'
@@ -46,10 +46,16 @@ class List extends Component {
             return (
               <li style={styles.li}>
                 <h3 style={{fontSize: '2em'}}><a href={event.url} target='_blank'>{event.title}</a></h3>
-                <div style={{float: 'left', marginRight: '10%'}}>Venue: {event.venue}</div>
-                <div>Postcode: {event.postcode}</div>
-                <div style={{float: 'left', marginRight: '10%'}}>Attendees: {event.attendees}</div>
-                <div>Time: {event.time}</div>
+                <Row>
+                  <Col md={2}><strong>Venue</strong></Col>
+                  <Col md={10}>{event.venue}</Col>
+                </Row>
+                <Row>
+                  <Col md={2}><strong>Time</strong></Col>
+                  <Col md={5}>{event.time}</Col>
+                  <Col md={3}><strong>Attendees</strong></Col>
+                  <Col md={2}><em>{event.attendees}</em></Col>
+                </Row>
                 <Button
                   onClick={() => {
                     this.props.changeCurrentEvent(event)
