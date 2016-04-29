@@ -6,7 +6,14 @@ import Footer from './Footer/footer_index.js'
 import '../../scss/style.scss'
 
 const options = {
-  logoUrl: 'img/SVW-Logo.png'
+  headerLogo: {
+    imgUrl: 'img/SVW-Logo.png',
+    websiteUrl: 'http://www.foundersandcoders.com'
+  },
+  footerLogo: {
+    imgUrl: 'img/FAC-logo.png',
+    websiteUrl: 'http://www.foundersandcoders.com'
+  }
 }
 
 export default class App extends React.Component {
@@ -14,12 +21,12 @@ export default class App extends React.Component {
     return (
       <div>
         <Header
-          logoUrl={options.logoUrl}
+          logo={options.headerLogo}
           fluid
         />
         <div className='header-spacing'></div>
           {this.props.children}
-        <Footer logoUrl={options.logoUrl} />
+        <Footer logo={options.footerLogo} />
       </div>
     )
   }

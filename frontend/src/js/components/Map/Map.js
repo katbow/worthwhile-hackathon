@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
+import PostCodeInput from '../../containers/PostCodeInput.js'
 import {convertAddressToLatLongObj} from '../../helpers/helpers_index.js'
 
 export default class Map extends Component {
@@ -16,15 +17,18 @@ export default class Map extends Component {
   }
   render () {
     return (
-      <div ref='mapCanvas' style={mapStyle}></div>
+      <div>
+        <PostCodeInput />
+        <div ref='mapCanvas' style={mapStyle}></div>
+      </div>
     )
   }
 }
 
 const mapStyle = {
   margin: '0 auto',
-  height: '350px',
-  width: '1200px',
+  height: '500px',
+  width: '85%',
 }
 
 const eventStyle = {

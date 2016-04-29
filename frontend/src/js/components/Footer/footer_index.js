@@ -6,7 +6,7 @@ export default (props) => {
     <Navbar className='footer'>
       <Navbar.Header>
         <Navbar.Brand>
-          <a><img src={props.logoUrl}></img></a>
+          <a href={props.logo.websiteUrl} target='_blank'><img src={props.logo.imgUrl}></img></a>
         </Navbar.Brand>
       </Navbar.Header>
       <Nav pullRight>

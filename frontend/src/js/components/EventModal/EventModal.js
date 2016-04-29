@@ -12,7 +12,7 @@ export default React.createClass({
       <div>
         <Modal show={this.props.toggleModal.isOpen} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>RANDOM INFO</Modal.Title>
+            <Modal.Title>EVENT INFO</Modal.Title>
           </Modal.Header>
             <EventTable />
           <Modal.Body>
