@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import {Button} from 'react-bootstrap'
 import { connect } from 'react-redux'
 
-import { toggleModal, changeCurrentEvent } from '../actions/index.js'
+import { toggleModal, changeCurrentEvent, addAttendee } from '../actions/index.js'
 
 const actionCreators = {
   toggleModal,
-  changeCurrentEvent
+  changeCurrentEvent,
+  addAttendee
 }
 
 const styles = {
@@ -32,7 +33,7 @@ class List extends Component {
   render() {
     return(
       <ul style={styles.ul}>
-        {this.props.eventList.map(event => {
+        {this.props.events.map((event, index) => {
           return (
             <li style={styles.li}>
               <h3 style={{fontSize: '2em'}}><a href={event.url}>{event.title}</a></h3>
@@ -46,6 +47,11 @@ class List extends Component {
                   this.props.toggleModal()
                 }}
               >See More Info
+              </Button>
+              <Button onClick={() => {
+                  this.props.addAttendee(null, event, index)
+                }}>
+                ATTEND EVENT
               </Button>
             </li>
           )}
