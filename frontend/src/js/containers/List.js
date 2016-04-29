@@ -28,10 +28,10 @@ class List extends Component {
           return (
             <li style={styles.li}>
               <h3 style={{fontSize: '2em'}}><a href={event.url}>{event.title}</a></h3>
-              <p style={{fontSize: '1em'}}>{event.description}</p>
-              <div>Venue: {event.venue},</div>
-              <div style={{float: 'left', marginRight: '10%'}}>Postcode: {event.postcode}</div>
-              <div>Current Attendees: {event.attendees}</div>
+              <div style={{float: 'left', marginRight: '10%'}}>Venue: {event.venue}</div>
+              <div>Postcode: {event.postcode}</div>
+              <div style={{float: 'left', marginRight: '10%'}}>Attendees: {event.attendees}</div>
+              <div>Time: {event.time}</div>
             </li>
           )}
         )} 
