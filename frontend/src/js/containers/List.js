@@ -32,31 +32,47 @@ const styles = {
 class List extends Component {
   render() {
     return(
-      <ul style={styles.ul}>
-        {this.props.events.map((event, index) => {
-          return (
-            <li style={styles.li}>
-              <h3 style={{fontSize: '2em'}}><a href={event.url}>{event.title}</a></h3>
-              <div style={{float: 'left', marginRight: '10%'}}>Venue: {event.venue}</div>
-              <div>Postcode: {event.postcode}</div>
-              <div style={{float: 'left', marginRight: '10%'}}>Attendees: {event.attendees}</div>
-              <div>Time: {event.time}</div>
-              <Button
-                onClick={() => {
-                  this.props.changeCurrentEvent(event)
-                  this.props.toggleModal()
-                }}
-              >See More Info
-              </Button>
-              <Button onClick={() => {
-                  this.props.addAttendee(null, event, index)
-                }}>
-                ATTEND EVENT
-              </Button>
-            </li>
+      <div>
+        <ul style={styles.ul}>
+          {this.props.events.map((event, index) => {
+            return (
+              <li style={styles.li}>
+                <h3 style={{fontSize: '2em'}}><a href={event.url} target='_blank'>{event.title}</a></h3>
+                <div style={{float: 'left', marginRight: '10%'}}>Venue: {event.venue}</div>
+                <div>Postcode: {event.postcode}</div>
+                <div style={{float: 'left', marginRight: '10%'}}>Attendees: {event.attendees}</div>
+                <div>Time: {event.time}</div>
+                <Button
+                  onClick={() => {
+                    this.props.changeCurrentEvent(event)
+                    this.props.toggleModal()
+                  }}
+                >See More Info
+                </Button>
+                <Button onClick={() => {
+                    this.props.addAttendee(null, event, index)
+                  }}>
+                  ATTEND EVENT
+                </Button>
+              </li>
+            )}
           )}
-        )}
-      </ul>
+        </ul>
+        <div style={{position: 'fixed', top: '20%', right: '1%'}}>
+          <h1>Institutions</h1>
+          <h4>Bangor University (3)</h4>
+          <h4>Canterbury College (1)</h4>
+          <h4>Canterbury College (1)</h4>
+          <h4>Cardiff University (6)</h4>
+          <h4>Coleg Sir Gar (3)</h4>
+          <h4>De Montfort Students Union (12)</h4>
+          <h4>Exeter College (1)</h4>
+          <h4>Hartpury (2)</h4>
+          <h4>Imperial College London (7)</h4>
+          <h4>Keele University (1)</h4>
+          <h4>Kingston University (10)</h4>
+        </div>
+      </div>
     )
   }
 }
