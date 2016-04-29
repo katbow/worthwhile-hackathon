@@ -11,7 +11,9 @@ const actionCreators = {
 class PostCodeInput extends Component {
   render () {
     return (
-      <form onSubmit={this.props.centreMapFunc}>
+      <form
+        onSubmit={this.props.centreMapFunc}
+        style={{margin: '2vh 0 0 7.5%'}}>
         <input
           ref='inputPostCode'
           id='inputPostCode'
