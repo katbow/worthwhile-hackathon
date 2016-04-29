@@ -7,7 +7,7 @@ const styles = {
     color: 'white',
     fontSize: '1.7em',
     textDecoration: 'none',
-    padding: '5px',
+    padding: '2em',
     margin: '9px',
     backgroundColor: 'green',
     borderRadius: '10px'
@@ -29,7 +29,7 @@ class List extends Component {
               <h3>{event.title}</h3>
               <p>{event.description}</p>
               <p><span>Venue: </span>{event.venue}</p>
-              <div>{event.attendees}</div>
+              <div>Current Attendees: {event.attendees}</div>
             </li>
           )}
         )} 
