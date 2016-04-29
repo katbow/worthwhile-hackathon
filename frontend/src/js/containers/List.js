@@ -1,5 +1,13 @@
 import React, { Component } from 'react'
+import {Button} from 'react-bootstrap'
 import { connect } from 'react-redux'
+
+import { toggleModal, changeCurrentEvent } from '../actions/index.js'
+
+const actionCreators = {
+  toggleModal,
+  changeCurrentEvent
+}
 
 const styles = {
   li: {
@@ -16,10 +24,10 @@ const styles = {
     padding: '2em',
     borderRadius: '10px'
   }
-} 
+}
 
 class List extends Component {
-  render() {
+  render () {
     console.log(this.props.eventList[0])
     return(
       <ul style={styles.ul}>
@@ -30,18 +38,21 @@ class List extends Component {
               <p>{event.description}</p>
               <p><span>Venue: </span>{event.venue},<div style={{width: '20px'}}></div> Postcode: {event.postcode}</p>
               <div>Current Attendees: {event.attendees}</div>
+              <Button
+                onClick={() => {
+                  this.props.changeCurrentEvent(event)
+                  this.props.toggleModal()
+                }}
+              >See More Info
+              </Button>
             </li>
           )}
-        )} 
+        )}
       </ul>
     )
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    eventList: state.eventList
-  }
-}
+const mapStateToProps = state => ({...state})
 
-export default connect(mapStateToProps)(List) 
+export default connect(mapStateToProps, actionCreators)(List)
