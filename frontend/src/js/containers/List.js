@@ -35,6 +35,12 @@ class List extends Component {
   render() {
     return(
       <div>
+        <div style={{position: 'fixed', top: '20%', left: '4%'}}>
+          <h1>SVW 2016</h1>
+          <h4>16 days until SVW!</h4>
+          <h4>5 Upcoming Events</h4>
+          <h4>252 Total Attendees</h4>
+        </div>
         <ul style={styles.ul}>
           {this.props.events.map((event, index) => {
             return (
