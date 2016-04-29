@@ -36,7 +36,7 @@ const initialize = (props, DOMnode) => {
   let bounds = new google.maps.LatLngBounds()
   const mapOptions = {
     center: {lat: props.centreMap.lat, lng: props.centreMap.lng},
-    zoom: 14
+    zoom: 13
   }
   // Display a map on the page
   let map = new google.maps.Map(DOMnode, mapOptions)
@@ -44,17 +44,6 @@ const initialize = (props, DOMnode) => {
   const markers = props.eventList.map(event => {
     return event.latLng
   })
-  const infoWindowContent = props.eventList.map(event => {
-    return (
-      `<div style=${eventStyle}>
-        <h3>${event.venue}</h3>
-        <p>${event.title}</p>
-      </div>`
-    )
-  })
-
-  // Display multiple markers on a map
-  let infoWindow = new google.maps.InfoWindow()
 
   // Loop through our array of markers & place each one on the map
   markers.forEach((coordinates, i) => {
@@ -67,12 +56,11 @@ const initialize = (props, DOMnode) => {
     })
 
     // Allow each marker to have an info window
-    google.maps.event.addListener(marker, 'click', ((marker, i) => {
-      return () => {
-        infoWindow.setContent(infoWindowContent[i])
-        infoWindow.open(map, marker)
-      }
-    })(marker, i))
+    google.maps.event.addListener(marker, 'click', () => {
+      console.log(props.eventList[i])
+      props.changeCurrentEvent(props.eventList[i])
+      props.toggleModal()
+    })
 
     // Automatically center the map fitting all markers on the screen
     // map.fitBounds(bounds)
