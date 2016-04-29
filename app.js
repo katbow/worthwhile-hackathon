@@ -29337,7 +29337,7 @@
 
 	exports.default = _react2.default.createElement(
 	  _reactRouter.Route,
-	  { path: '/', component: _App2.default },
+	  { path: '/worthwhile-hackathon/', component: _App2.default },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _EventsContainer2.default })
 	);
 

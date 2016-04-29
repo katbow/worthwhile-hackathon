@@ -5,7 +5,7 @@ import App from './components/App.js'
 import EventsContainer from './containers/EventsContainer.js'
 
 export default (
-  <Route path='/' component={App}>
+  <Route path='/worthwhile-hackathon/' component={App}>
     <IndexRoute component={EventsContainer} />
   </Route>
 )
