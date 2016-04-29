@@ -18,7 +18,7 @@ export default class Header extends React.Component {
           onToggle={() => { this.setState({ menuOpen: !this.state.menuOpen }) }}
           className='top-menu'
           fixedTop={true}
-          style={{backgroundImage: 'url("http://i.imgur.com/CQbE0tE.jpg"'}}>
+          style={{backgroundImage: 'url("https://i.imgur.com/CQbE0tE.jpg"'}}>
           <Navbar.Header>
             <Navbar.Brand>
               <Link to={'/'}>
