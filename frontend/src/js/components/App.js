@@ -7,11 +7,11 @@ import '../../scss/style.scss'
 
 const options = {
   headerLogo: {
-    imgUrl: 'img/SVW-Logo.png',
+    imgUrl: 'http://i.imgur.com/79yoBkg.png',
     websiteUrl: 'http://www.foundersandcoders.com'
   },
   footerLogo: {
-    imgUrl: 'img/FAC-logo.png',
+    imgUrl: 'http://i.imgur.com/Nxnq72F.png',
     websiteUrl: 'http://www.foundersandcoders.com'
   }
 }
