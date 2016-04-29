@@ -45,7 +45,7 @@ const initialize = (props, DOMnode) => {
   // Display a map on the page
   let map = new google.maps.Map(DOMnode, mapOptions)
   map.setTilt(45)
-  const markers = props.eventList.map(event => {
+  const markers = props.events.map(event => {
     return event.latLng
   })
 
@@ -56,13 +56,13 @@ const initialize = (props, DOMnode) => {
     let marker = new google.maps.Marker({
       position,
       map,
-      title: props.eventList[i].title
+      title: props.events[i].title
     })
 
     // Allow each marker to have an info window
     google.maps.event.addListener(marker, 'click', () => {
-      console.log(props.eventList[i])
-      props.changeCurrentEvent(props.eventList[i])
+      console.log(props.events[i])
+      props.changeCurrentEvent(props.events[i])
       props.toggleModal()
     })
 
