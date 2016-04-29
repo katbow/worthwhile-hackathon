@@ -67,17 +67,17 @@ class List extends Component {
         </ul>
         <div style={{position: 'fixed', top: '20%', right: '1%'}}>
           <h1>Institutions</h1>
-          <h4>Bangor University (3)</h4>
-          <h4>Canterbury College (1)</h4>
-          <h4>Canterbury College (1)</h4>
-          <h4>Cardiff University (6)</h4>
-          <h4>Coleg Sir Gar (3)</h4>
-          <h4>De Montfort Students Union (12)</h4>
-          <h4>Exeter College (1)</h4>
-          <h4>Hartpury (2)</h4>
-          <h4>Imperial College London (7)</h4>
-          <h4>Keele University (1)</h4>
-          <h4>Kingston University (10)</h4>
+          <a href='http://www.london.ac.uk/'><h4>Bangor University (3)</h4></a>
+          <a href='http://www.london.ac.uk/'><h4>Canterbury College (1)</h4></a>
+          <a href='http://www.london.ac.uk/'><h4>Canterbury College (1)</h4></a>
+          <a href='http://www.london.ac.uk/'><h4>Cardiff University (6)</h4></a>
+          <a href='http://www.london.ac.uk/'><h4>Coleg Sir Gar (3)</h4></a>
+          <a href='http://www.london.ac.uk/'><h4>De Montfort Students Union (12)</h4></a>
+          <a href='http://www.london.ac.uk/'><h4>Exeter College (1)</h4></a>
+          <a href='http://www.london.ac.uk/'><h4>Hartpury (2)</h4></a>
+          <a href='http://www.london.ac.uk/'><h4>Imperial College London (7)</h4></a>
+          <a href='http://www.london.ac.uk/'><h4>Keele University (1)</h4></a>
+          <a href='http://www.london.ac.uk/'><h4>Kingston University (10)</h4></a>
         </div>
       </div>
     )
