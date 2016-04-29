@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 
 export const TOGGLE_VIEW_EVENTS = 'TOGGLE_VIEW_EVENTS'
 export const CENTRE_MAP = 'CENTRE_MAP'
+export const TOGGLE_MODAL = 'TOGGLE_MODAL'
+export const CHANGE_CURRENT_EVENT = 'CHANGE_CURRENT_EVENT'
 
 export const toggleviewevents = (eventKey) => {
   return {
@@ -23,5 +25,18 @@ export const centreMapFunc = (e) => {
     .catch(err => {
       console.log(err)
     })
+  }
+}
+
+export const toggleModal = () => {
+  return {
+    type: TOGGLE_MODAL
+  }
+}
+
+export const changeCurrentEvent = (event) => {
+  return {
+    type: CHANGE_CURRENT_EVENT,
+    payload: event
   }
 }
