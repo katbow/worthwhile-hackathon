@@ -7,42 +7,42 @@ export default (state = initialState, action) => {
 
 const initialState = [
   {
-    title: 'Worthwhile Hackathon',
+    title: 'Regional Toiletries Collection',
     venue: 'BirkBeck',
-    time: '12.00 on 24/5/2016',
+    time: 'all day',
     postcode: 'E15 1NF',
     latLng: {lat: 51.521746, lng: -0.130588},
-    description: 'sdaeracdghrkjhsdfjkaldsf ',
+    description: 'The North East Universities are working together to collect toiletries and warm clothing for the homeless.',
     url: 'https://www.studentvolunteeringweek.org/whats-on/ealing-hammersmith-and-west-london-college',
-    attendees: 22
+    attendees: 60
   },
   {
-    title: 'Worthwhile Hackathon',
+    title: 'SVW Health and Wellbeing Day',
     venue: 'West London College',
     time: '12.00 on 24/5/2016',
     postcode: 'W1U 4DJ',
     latLng: {lat: 51.491393, lng: -0.214158},
-    description: 'sdaeracdghrkjhsdfjkaldsf ',
+    description: "Practical help and advice on health and well being from UPSU's Volunteering societies, including kick boxing taster sessions, sexual health advice and more.",
     url: 'https://www.studentvolunteeringweek.org/whats-on/ealing-hammersmith-and-west-london-college',
     attendees: 22
   },
   {
-    title: 'Worthwhile Hackathon',
+    title: 'DMU Steppers in Schools',
     venue: 'Imperial College London',
     time: '12.00 on 24/5/2016',
     postcode: 'SW7 2AZ',
     latLng: {lat: 51.498780, lng: -0.174909},
-    description: 'sdaeracdghrkjhsdfjkaldsf ',
+    description: "DMU Steppers, as featured on Britain's Got Talent, will be performing one of their renowned routines in front of Humberstone Infant School.",
     url: 'https://www.studentvolunteeringweek.org/whats-on/ealing-hammersmith-and-west-london-college',
     attendees: 22
   },
   {
-    title: 'Worthwhile Hackathon',
+    title: 'V Team hosting Charities',
     venue: 'Kingston University',
     time: '12.00 on 24/5/2016',
     postcode: 'KT1 2EE',
     latLng: {lat: 51.403917, lng: -0.303669},
-    description: 'sdaeracdghrkjhsdfjkaldsf ',
+    description: 'V Team Student Volunteering are hosting charities on campus throughout the week: Guide Dogs for the Blind, Julian House, Red Cross, Great Western Air Ambulance, Oxfam, Mentoring Plus to name but a few...come along and find out more! :)',
     url: 'https://www.studentvolunteeringweek.org/whats-on/ealing-hammersmith-and-west-london-college',
     attendees: 22
   },
