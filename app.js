@@ -28083,16 +28083,21 @@
 	  };
 	};
 
-	var centreMapFunc = exports.centreMapFunc = function centreMapFunc(e) {
+	var centreMapFunc = exports.centreMapFunc = function centreMapFunc(e, LatLngInput) {
 	  e.preventDefault();
+	  console.log('LatLngInput is', LatLngInput);
 	  // const postcode = ReactDOM.findDOMNode(this.refs.inputPostCode).value
-	  var postcode = document.getElementById('inputPostCode').value;
-	  if (postcode.length > 5 && postcode.indexOf(' ') > -1) {
-	    return (0, _helpers_index.convertAddressToLatLongObj)(postcode).then(function (latLng) {
-	      return { type: CENTRE_MAP, payload: latLng };
-	    }).catch(function (err) {
-	      console.log(err);
-	    });
+	  if (!LatLngInput) {
+	    var postcode = document.getElementById('inputPostCode').value;
+	    if (postcode.length > 5 && postcode.indexOf(' ') > -1) {
+	      return (0, _helpers_index.convertAddressToLatLongObj)(postcode).then(function (latLng) {
+	        return { type: CENTRE_MAP, payload: latLng };
+	      }).catch(function (err) {
+	        console.log(err);
+	      });
+	    }
+	  } else {
+	    return { type: CENTRE_MAP, payload: LatLngInput };
 	  }
 	};
 
@@ -29422,9 +29427,6 @@
 
 	  switch (action.type) {
 	    case _index.ATTEND_EVENT:
-	      console.log('state.slice(0, action.index)', state.slice(0, action.index));
-	      console.log('action event', action.event);
-	      console.log('new state', state.slice(0, action.index).concat(action.event).concat(state.slice(action.index + 1)));
 	      return state.slice(0, action.index).concat(action.event).concat(state.slice(action.index + 1));
 	    default:
 	      return state;
@@ -47505,7 +47507,7 @@
 
 
 	// module
-	exports.push([module.id, ".header-spacing {\n  height: 100px; }\n\n.navbar {\n  margin-bottom: 0; }\n\n.navbar-toggle {\n  border: none;\n  transition: 0.3s ease;\n  padding: 10px;\n  margin-top: 15px;\n  margin-right: 15px; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #fff;\n  width: 25px;\n  height: 3px; }\n\n.navbar-default .navbar-toggle:focus {\n  background-color: transparent; }\n\n.navbar-default .navbar-toggle:hover {\n  background-color: rgba(221, 221, 221, 0.26); }\n\n.top-menu {\n  background-color: green;\n  border: none;\n  border-radius: 0; }\n  .top-menu .navbar-nav > li > a {\n    color: #fff; }\n  .top-menu .navbar-brand {\n    height: 100px;\n    width: 7em; }\n    .top-menu .navbar-brand img {\n      margin-top: 10px;\n      width: 100%; }\n\n@media (min-width: 768px) {\n  .top-menu .navbar-right li {\n    padding: 20px 0; } }\n\n.user-logged-in {\n  position: absolute;\n  margin-top: 15px;\n  color: #3E6AA3; }\n\n.footer {\n  border: none;\n  border-radius: 0;\n  position: absolute;\n  width: 100%;\n  bottom: 0;\n  background-color: #2B2B2B; }\n  .footer .navbar-header,\n  .footer .navbar-right li {\n    display: inline-block;\n    color: #fff; }\n  .footer .navbar-right {\n    display: inline-block;\n    float: right; }\n  .footer p {\n    margin: 2em 1.5em;\n    color: #fff; }\n  .footer .navbar-brand {\n    width: 5.26316em; }\n    .footer .navbar-brand img {\n      width: 100%; }\n\nhtml {\n  position: relative;\n  min-height: 100%; }\n\nbody {\n  font-family: Lato, PT Sans, Helvetica Neue, Helvetica, Arial;\n  margin-bottom: 80px; }\n\n.about h3 {\n  text-align: center;\n  margin: 2em; }\n\n.home {\n  text-align: center; }\n\n.image-container {\n  width: 80%;\n  max-width: 400px;\n  margin: 4em auto; }\n  .image-container img {\n    width: 100%; }\n", ""]);
+	exports.push([module.id, ".header-spacing {\n  height: 100px; }\n\n.navbar {\n  margin-bottom: 0; }\n\n.navbar-toggle {\n  border: none;\n  transition: 0.3s ease;\n  padding: 10px;\n  margin-top: 15px;\n  margin-right: 15px; }\n\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #fff;\n  width: 25px;\n  height: 3px; }\n\n.navbar-default .navbar-toggle:focus {\n  background-color: transparent; }\n\n.navbar-default .navbar-toggle:hover {\n  background-color: rgba(221, 221, 221, 0.26); }\n\n.top-menu {\n  background-color: #199FD4;\n  border: none;\n  border-radius: 0; }\n  .top-menu .navbar-nav > li > a {\n    color: #fff; }\n  .top-menu .navbar-brand {\n    height: 100px;\n    width: 7em; }\n    .top-menu .navbar-brand img {\n      margin-top: 10px;\n      width: 100%; }\n\n@media (min-width: 768px) {\n  .top-menu .navbar-right li {\n    padding: 20px 0; } }\n\n.user-logged-in {\n  position: absolute;\n  margin-top: 15px;\n  color: #3E6AA3; }\n\n.footer {\n  border: none;\n  border-radius: 0;\n  position: absolute;\n  width: 100%;\n  bottom: 0;\n  background-color: #2B2B2B; }\n  .footer .navbar-header,\n  .footer .navbar-right li {\n    display: inline-block;\n    color: #fff; }\n  .footer .navbar-right {\n    display: inline-block;\n    float: right; }\n  .footer p {\n    margin: 2em 1.5em;\n    color: #fff; }\n  .footer .navbar-brand {\n    width: 5.26316em; }\n    .footer .navbar-brand img {\n      width: 100%; }\n\nhtml {\n  position: relative;\n  min-height: 100%; }\n\nbody {\n  font-family: Lato, PT Sans, Helvetica Neue, Helvetica, Arial;\n  margin-bottom: 80px; }\n\n.about h3 {\n  text-align: center;\n  margin: 2em; }\n\n.home {\n  text-align: center; }\n\n.image-container {\n  width: 80%;\n  max-width: 400px;\n  margin: 4em auto; }\n  .image-container img {\n    width: 100%; }\n", ""]);
 
 	// exports
 
@@ -48015,7 +48017,9 @@
 	var actionCreators = {
 	  toggleModal: _index.toggleModal,
 	  changeCurrentEvent: _index.changeCurrentEvent,
-	  addAttendee: _index.addAttendee
+	  addAttendee: _index.addAttendee,
+	  toggleviewevents: _index.toggleviewevents,
+	  centreMapFunc: _index.centreMapFunc
 	};
 
 	var styles = {
@@ -48026,7 +48030,7 @@
 	    textDecoration: 'none',
 	    padding: '0.5em 2em 2em 2em',
 	    margin: '9px',
-	    border: '3px solid green',
+	    border: '3px solid #199FD4',
 	    borderRadius: '10px'
 	  },
 	  ul: {
@@ -48052,64 +48056,208 @@
 	      var _this2 = this;
 
 	      return _react2.default.createElement(
-	        'ul',
-	        { style: styles.ul },
-	        this.props.events.map(function (event, index) {
-	          return _react2.default.createElement(
-	            'li',
-	            { style: styles.li },
-	            _react2.default.createElement(
-	              'h3',
-	              { style: { fontSize: '2em' } },
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { style: { position: 'fixed', top: '20%', left: '4%' } },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'SVW 2016'
+	          ),
+	          _react2.default.createElement(
+	            'h4',
+	            null,
+	            '16 days until SVW!'
+	          ),
+	          _react2.default.createElement(
+	            'h4',
+	            null,
+	            '5 Upcoming Events'
+	          ),
+	          _react2.default.createElement(
+	            'h4',
+	            null,
+	            '252 Total Attendees'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'ul',
+	          { style: styles.ul },
+	          this.props.events.map(function (event, index) {
+	            return _react2.default.createElement(
+	              'li',
+	              { style: styles.li },
 	              _react2.default.createElement(
-	                'a',
-	                { href: event.url },
-	                event.title
+	                'h3',
+	                { style: { fontSize: '2em' } },
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: event.url, target: '_blank' },
+	                  event.title
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { style: { float: 'left', marginRight: '10%' } },
+	                'Venue: ',
+	                event.venue
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                'Postcode: ',
+	                event.postcode
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { style: { float: 'left', marginRight: '10%' } },
+	                'Attendees: ',
+	                event.attendees
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                'Time: ',
+	                event.time
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                {
+	                  onClick: function onClick() {
+	                    _this2.props.changeCurrentEvent(event);
+	                    _this2.props.toggleModal();
+	                  }
+	                },
+	                'MORE INFO'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { onClick: function onClick() {
+	                    _this2.props.addAttendee(null, event, index);
+	                  } },
+	                'ATTEND EVENT'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { onClick: function onClick(e) {
+	                    _this2.props.toggleviewevents('map');
+	                    _this2.props.centreMapFunc(e, event.latLng);
+	                  } },
+	                'GO TO MAP'
 	              )
-	            ),
+	            );
+	          })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { style: { position: 'fixed', top: '20%', right: '1%' } },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Institutions'
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
 	            _react2.default.createElement(
-	              'div',
-	              { style: { float: 'left', marginRight: '10%' } },
-	              'Venue: ',
-	              event.venue
-	            ),
-	            _react2.default.createElement(
-	              'div',
+	              'h4',
 	              null,
-	              'Postcode: ',
-	              event.postcode
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { style: { float: 'left', marginRight: '10%' } },
-	              'Attendees: ',
-	              event.attendees
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              null,
-	              'Time: ',
-	              event.time
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.Button,
-	              {
-	                onClick: function onClick() {
-	                  _this2.props.changeCurrentEvent(event);
-	                  _this2.props.toggleModal();
-	                }
-	              },
-	              'See More Info'
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.Button,
-	              { onClick: function onClick() {
-	                  _this2.props.addAttendee(null, event, index);
-	                } },
-	              'ATTEND EVENT'
+	              'Bangor University (3)'
 	            )
-	          );
-	        })
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'Canterbury College (1)'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'Canterbury College (1)'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'Cardiff University (6)'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'Coleg Sir Gar (3)'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'De Montfort Students Union (12)'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'Exeter College (1)'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'Hartpury (2)'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'Imperial College London (7)'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'Keele University (1)'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'http://www.london.ac.uk/' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'Kingston University (10)'
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -48291,7 +48439,7 @@
 	  // Display a map on the page
 	  var map = new google.maps.Map(DOMnode, mapOptions);
 	  map.setTilt(45);
-	  var markers = props.eventList.map(function (event) {
+	  var markers = props.events.map(function (event) {
 	    return event.latLng;
 	  });
 
@@ -48302,13 +48450,13 @@
 	    var marker = new google.maps.Marker({
 	      position: position,
 	      map: map,
-	      title: props.eventList[i].title
+	      title: props.events[i].title
 	    });
 
 	    // Allow each marker to have an info window
 	    google.maps.event.addListener(marker, 'click', function () {
-	      console.log(props.eventList[i]);
-	      props.changeCurrentEvent(props.eventList[i]);
+	      console.log(props.events[i]);
+	      props.changeCurrentEvent(props.events[i]);
 	      props.toggleModal();
 	    });
 
