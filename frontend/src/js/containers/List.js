@@ -58,7 +58,7 @@ class List extends Component {
               <Button onClick={(e) => {
                   this.props.toggleviewevents('map')
                   this.props.centreMapFunc(e, event.latLng)
-                }}>GO TO map
+                }}>GO TO MAP
               </Button>
             </li>
           )}
