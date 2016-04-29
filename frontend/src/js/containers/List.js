@@ -20,7 +20,7 @@ const styles = {
     textDecoration: 'none',
     padding: '0.5em 2em 2em 2em',
     margin: '9px',
-    border: '3px solid green',
+    border: '3px solid #199FD4',
     borderRadius: '10px'
   },
   ul: {
