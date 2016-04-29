@@ -3,6 +3,7 @@ import { Nav, NavItem } from 'react-bootstrap'
 import List from '../../containers/List.js'
 import Map from '../../containers/Map.js'
 import PostCodeInput from '../../containers/PostCodeInput.js'
+import EventModal from '../../containers/EventModal.js'
 
 export default class ToggleViewEvents extends Component {
   render () {
@@ -17,6 +18,7 @@ export default class ToggleViewEvents extends Component {
           <PostCodeInput />
         </Nav>
         {this.props.eventsView === 'list' ? <List /> : <Map />}
+        <EventModal />
       </div>
     )
   }
