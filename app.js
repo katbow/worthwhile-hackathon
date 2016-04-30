@@ -29662,7 +29662,7 @@
 	            },
 	            className: 'top-menu',
 	            fixedTop: true,
-	            style: { backgroundImage: 'url("http://i.imgur.com/CQbE0tE.jpg"' } },
+	            style: { backgroundImage: 'url("http://i.imgur.com/CQbE0tE.jpg")' } },
 	          _react2.default.createElement(
 	            _reactBootstrap.Navbar.Header,
 	            null,
